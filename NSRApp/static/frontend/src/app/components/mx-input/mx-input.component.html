@@ -1,0 +1,9 @@
+<input 
+	class="mx-input {{theme}}"
+	[class.disable]="disable" 
+	[(ngModel)]="ngModel" 
+	[type]="type || 'text'"
+	[readonly]="disable"
+	[placeholder]="placeholder || ''"
+	spellcheck="false"
+/>

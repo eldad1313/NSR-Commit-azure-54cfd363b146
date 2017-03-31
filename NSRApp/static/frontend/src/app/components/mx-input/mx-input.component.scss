@@ -1,0 +1,28 @@
+@import '../../scss/all';
+
+.mx-input{
+	@include normalStyle(14, $color4);
+	line-height: 25px;
+	padding: 0px 7px;
+    border: 1px solid $color100;
+    width: 100%;
+	
+	&.disable {
+		background: $color102;
+		@include normalStyle(14, $color2);
+	}
+
+	&.login {
+		width: 320px;
+		height: 60px;
+		@include prefix(border-radius, 30px);
+		text-align: center;
+		padding-top: 16px;
+		margin-left: 90px;
+		@include normalStyle(20, $color1);
+		background: rgba($color7, 0.7);
+		border: none;
+		outline: none;
+		padding-top: 0px;
+	}
+}

@@ -1,0 +1,61 @@
+@import 'colors';
+@import 'fonts';
+@import 'scroll';
+@import 'modals';
+@import 'layout';
+
+.ellipsis-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.disable-html {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.no-select {
+    @include prefix(user-select, none);
+}
+
+.login-mask {
+    position: fixed;
+    background: white;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1000010;
+}
+
+.notification-mask {
+    position: fixed;
+    background: black;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1000010;
+    opacity: 0.85;
+    .notification-msg-wrapper {
+        position: fixed;
+        top: 170px;
+        left: 416px;
+        .notification-msg {
+            color: white;
+            font-size: 25px;
+            position: relative;
+            top: -36px;
+            left: 100px;
+        }
+    }
+}

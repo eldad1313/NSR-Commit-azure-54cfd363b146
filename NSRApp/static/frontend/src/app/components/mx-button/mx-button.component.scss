@@ -1,0 +1,86 @@
+@import '../../scss/all';
+
+.mx-button {
+	&.large-primary {
+		padding: 10px 30px;
+		background: $color5;
+		@include normalStyle(16, $color7);
+		text-align: center;
+		display: inline-block;
+		@include prefix(border-radius, 10px);
+		cursor: pointer;
+		&:hover {
+			background: $color3;
+		}
+		&:active {
+			background: $color4;
+		}
+	}
+
+	&.medium-grey {
+		padding: 3px 20px;
+		background: $color2;
+		@include normalStyle(14, $color7);
+		text-align: center;
+		display: inline-block;
+		@include prefix(border-radius, 14px);
+		cursor: pointer;
+		&:hover {
+			background: $color1;
+		}
+		&:active {
+			background: $color6;
+		}
+	}
+
+	&.medium-clear-grey{
+		padding: 3px 10px;
+		background: none;
+		@include normalStyle(14, $color2);
+		text-align: center;
+		display: inline-block;
+		@include prefix(border-radius, 14px);
+		cursor: pointer;
+		&:hover {
+			color: $color1;
+		}
+		&:active {
+			color: $color6;
+		}
+	}
+
+	&.medium-clear-red{
+		padding: 3px 10px;
+		background: none;
+		@include normalStyle(14, $color8);
+		text-align: center;
+		display: inline-block;
+		@include prefix(border-radius, 14px);
+		cursor: pointer;
+		&:hover {
+			color: $color8-130;
+		}
+		&:active {
+			color: $color1;
+		}
+	}
+
+	&.disable {
+		cursor: default;
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	&.login {
+		width: 320px;
+		height: 60px;
+		@include prefix(border-radius, 30px);
+		text-align: center;
+		padding-top: 16px;
+		margin-left: 90px;
+		@include normalStyle(20, $color7, true);
+		background: $color6;
+		margin-top: 60px;
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,10 @@
+@import '../../scss/all';
+
+.mx-textarea {
+    height: 100%;
+    width: 100%;
+    resize: none;
+    border: 1px solid $color100;
+	@include normalStyle(14, $color1);
+	padding: 6px;
+}

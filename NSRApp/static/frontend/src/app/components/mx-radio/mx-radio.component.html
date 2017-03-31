@@ -1,0 +1,4 @@
+<div class="mx-radio" (click)="change()">
+    <input type="radio" [id]="id" [name]="name" [(ngModel)]="ngModel" [value]="value" />
+    <label [for]="id"><div class="icon"><div class="inner-icon"></div></div><ng-content></ng-content></label>
+</div>

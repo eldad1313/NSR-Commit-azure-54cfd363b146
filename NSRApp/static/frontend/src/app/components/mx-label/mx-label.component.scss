@@ -1,0 +1,24 @@
+@import '../../scss/all';
+
+.mx-label {
+	&.form {
+		@include normalStyle(12, $color1, true);
+		line-height: 27px;
+	}
+	&.form-normal {
+		@include normalStyle(14, $color4);
+		line-height: 27px;
+	}
+	&.login {
+		@include normalStyle(20, $color1, true);
+		@include prefix(user-select, none);
+		cursor: default;
+		position: relative;
+		display: block;
+		text-align: left;
+		padding-left: 115px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		margin: 20px 0px;
+	}
+}

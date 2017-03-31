@@ -1,0 +1,81 @@
+<div class="mx-calendar {{type}} max-height">
+
+    <div class="row month-selection-row">
+        <div class="col-md-100 text-center no-select">
+            <icon class="icon-left" type="OpenLeft" hover="true" pressed="true" (click)="changeMonth(-1)"></icon>
+            <div class="month-year inline-block" style="width: 150px;">
+                {{ 'calendar.month' + month | i18n }} {{ year }}
+            </div>
+            <icon class="icon-right" type="CloseRight" hover="true" pressed="true" (click)="changeMonth(1)"></icon>
+        </div>
+    </div>
+
+    <div class="inner-calendar">
+
+        <div class="row days-row" [style.height]="(100/(weeks.length+1)) + '%'">
+            <div class="col-md-14 text-center day-wrapper max-height" *ngFor="let day of days">
+                <div class="day title">
+                    {{ 'calendar.' + day | i18n }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row week-row" *ngFor="let week of weeks" [style.height]="(100/(weeks.length+1)) + '%'">
+            <div class="col-md-14 text-center max-height day-wrapper" *ngFor="let day of week">
+                <div 
+                    class="day" 
+                    *ngIf="day" 
+                    [class.past]="(!enablePastSelection && day.past) || (disableFutureSelection && day.future)"
+                    [class.enableSelect]="(enablePastSelection || !day.past) && (!(disableFutureSelection && day.future)) && enableSelect"
+                    (click)="(enablePastSelection || !day.past) && enableSelect && (!(disableFutureSelection && day.future)) && select(day)">
+                    {{ day.dayNum }}
+                </div>
+                <div 
+                    class="today" 
+                    *ngIf="day && day.today" 
+                    (click)="enableSelect && select(day)"
+                    [class.enableSelect]="enableSelect">
+                </div>
+                <div class="selected" *ngIf="enableSelect && day && isSelected(day)"></div>
+                <div class="indication" *ngIf="day && day.indication" [class.past]="!enablePastSelection && day.past">
+                    <div class="icon {{day.indication.type}} indication-icon">
+                        <div class="agregator" *ngIf="day.indication.showAgregator">
+                            <div class="agregator-sum">
+                                {{ day.indication.agregatorSum }}
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="popover-calendar-wrapper" *ngIf="day && day.indication && day.indication.popover">
+                    <template #popTemplate>
+                        <div class="body-injected-calendar-popover">
+                            <div *ngFor="let p of day.indication.popover">
+                                <div
+                                    *ngIf="p.type == 'select'"
+                                    class="popover-select"
+                                    [class.clickable]="p.clickable"
+                                    (click)="p.clickable && pop.hide(); p.clickable && p.onclick()">
+                                    {{p.label}}
+                                </div>
+                                <div
+                                    *ngIf="!p.hide && p.type == 'add-visit'"
+                                    class="popover-add text-center"
+                                    (click)="pop.hide(); p.onclick()">
+                                    <icon type="AddCircleBtnSml" hover="true" pressed="true"></icon>
+                                </div>
+                            </div>                        
+                        </div>
+                    </template>
+                    <button
+                        [popover]="popTemplate"
+                        #pop="bs-popover"
+                        container="body"
+                        (click)="utilService.popover(pop.isOpen, pop.hide.bind(pop))">
+                    </button>
+                </div>
+            </div>
+        </div>    
+
+    </div>
+
+</div>

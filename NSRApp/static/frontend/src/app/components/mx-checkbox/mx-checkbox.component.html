@@ -1,0 +1,6 @@
+<div class="mx-checkbox" (click)="check()">
+    <input type="checkbox" [(ngModel)]="ngModel" [id]="id">
+    <label for="id">
+        <div class="icon" [ngClass]="{ 'Check': ngModel }"></div>
+    </label>
+</div>

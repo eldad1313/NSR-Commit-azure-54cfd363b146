@@ -1,0 +1,36 @@
+<div dropdown dropdown-append-to-body class="{{type}} no-select" [class.disable]="disable">
+    <div dropdownToggle class="dropdown-header" [class.invalid]="invalidStyle" (click)="onHeaderClick()">
+        <div *ngIf="transcludeHeader">
+            <ng-content></ng-content>
+        </div>
+        <div *ngIf="!transcludeHeader">
+            <div
+                *ngIf="!ngModel"
+                class="placeholder" ellipsisOverflow>
+                {{ prefix }}{{ placeholder || ('G.dropdownPlaceholder' | i18n) }}
+            </div>
+            <div
+                *ngIf="ngModel"
+                class="selected" ellipsisOverflow>
+                {{ prefix }}{{ getSelectedVal() }}
+            </div>
+            <icon type="Drpdwn" hover="true" pressed="true" class="expand-icon"></icon>
+        </div>
+    </div>
+    <ul class="dropdown-menu" role="menu">
+        <div *ngFor="let option of options">
+            <li
+                role="menuitem"
+                (click)="select(option)">
+                <div class="dropdown-item">
+                    <icon 
+                        [type]="setOptionIndicators" 
+                        [style.visibility]="option.id !== ngModel ? 'hidden' : 'visible'" 
+                        *ngIf="setOptionIndicators">
+                    </icon>
+                    {{ option.val }}
+                </div>
+            </li>
+        </div>
+    </ul>
+</div>

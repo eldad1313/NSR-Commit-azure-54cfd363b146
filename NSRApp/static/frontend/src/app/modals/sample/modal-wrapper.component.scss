@@ -1,0 +1,70 @@
+@import '../../scss/all';
+
+@mixin baseModalStyle() {
+    box-shadow: none;
+    .modal-header {
+        border: none;
+        @include boldStyle(16, $color1, true);
+    }
+    .modal-footer {
+        border: none;
+        .float-left {
+            float: left;
+            margin-right: 10px;
+        }
+        .float-right {
+            float: right;
+            margin-left: 10px;
+        }
+        .close-icon {
+            icon {
+                margin-right: 3px;
+                position: relative;
+                top: 1px;
+            }
+        }
+        .margin-bottom-12 {
+            margin-bottom: 12px;
+        }
+        .margin-bottom-6 {
+            margin-bottom: 6px;
+        }
+        .btn-left-sep::before {
+            position: relative;
+            top: -1px;
+            left: -5px;
+            content: "|";
+        }
+    }
+}
+
+.mx-modal-1 {
+    @include baseModalStyle();
+}
+
+.mx-modal-extended-title-80h {
+    @include baseModalStyle();
+    
+    .modal-header {
+        background: $color4;
+        @include prefix(border-radius, 5px 5px 0 0);
+    }
+    
+    .modal-body {
+        padding: 0px;
+        height: calc(80vh - 77px); // 80% of screen size minus header and footer heights
+    }
+}
+
+.mx-modal-extended-title {
+    @include baseModalStyle();
+    
+    .modal-header {
+        background: $color4;
+        @include prefix(border-radius, 5px 5px 0 0);
+    }
+    
+    .modal-body {
+        padding: 0px;
+    }
+}

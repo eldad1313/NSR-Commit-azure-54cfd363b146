@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'app/scss/layout';
+@import 'app/scss/common';
+@import 'app/scss/print';
+@import 'app/scss/form';
+@import 'app/scss/colors';
+
+// bootstrap-sass with our customizations
+$grid-columns: 100;
+$grid-gutter-width: 0px;
+// $screen-md-min: 10px;
+$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'app/scss/bootstrap-modifications';
+
+body {
+    background: $color2;
+}

@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://portal-qa.maytronics.co/",
+    "secure": false
+  },
+  "/auth": {
+    "target": "https://portal-qa.maytronics.co/",
+    "secure": false
+  }
+}

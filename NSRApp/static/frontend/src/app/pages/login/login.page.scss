@@ -1,0 +1,41 @@
+@import '../../scss/all';
+
+.login-page {
+    overflow-y: scroll;
+
+    .top-section {
+        height: 160px;
+    }
+    .logo-wrapper {
+        padding: 0px calc((100vw - 300px) / 2);
+        margin-bottom: 18px;
+    }
+    .login-panel {
+        margin: 0px calc((100vw - 360px) / 2);
+        width: 360px;
+        height: 330px;
+        @include prefix(border-radius, 20px);
+        background: $color7;
+        padding-top: 30px;
+
+        .error-text {
+            color: red;
+            position: absolute;
+            left: 116px;
+        }
+    }
+
+    .logo-row,
+    .password-row,
+    .username-row{
+        margin-bottom: 20px;
+    }
+
+    .submit-row{
+        margin-top: 35px;
+    }
+
+    .forgot-password-col{
+        color: $color3;
+    }
+}

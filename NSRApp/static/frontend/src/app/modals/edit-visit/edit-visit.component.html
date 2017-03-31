@@ -1,0 +1,205 @@
+<div class="edit-visit form-container">
+
+    <div class="row" [hidden]="(args.visitId && !args.visitSeriesId) || args.hideVisitTypeSelection">
+        <div class="col-md-100 text-center">
+            <!--<horizontal-select [options]="visitTypeSelectOptions" [(selected)]="visitType" (selectedChange)="visitTypeChange && visitTypeChange()"></horizontal-select>-->
+        </div>
+    </div>
+    <!-- POOL DETAILS-->
+    <div class="row pool-extended-title" *ngIf="args.modalMode=='extendedTitle'">
+        <div class="col-md-25 pool-name">
+            <div class="title">{{args.poolData.poolName}}</div>
+            <div class="title-link pointer" (click)="modalClose()" [routerLink]="'sys/pools/poolsView/' + args.poolData.poolId">{{'selectPool.poolNameLink' | i18n}}</div>
+        </div>
+        <div class="col-md-50 pool-address">
+            <div class="value" ellipsisOverflow>
+                {{ args.poolData.address.raw }}, {{ args.poolData.address.state }}
+            </div>
+            <mx-label type="form">
+                {{'G.address' | i18n | uppercase}}
+            </mx-label>
+            <div class="value">
+                {{ args.poolData.ownerEmail }}
+            </div>
+            <mx-label type="form">
+                {{'G.email' | i18n | uppercase}}
+            </mx-label>
+        </div>
+        <div class="col-md-25 pool-phone">
+            <div class="value">
+                {{ args.poolData.ownerPrimaryPhoneNumber }}
+            </div>
+            <mx-label type="form">
+                {{'selectPool.primaryPhone' | i18n | uppercase}}
+            </mx-label>
+            <div class="value">
+                {{ args.poolData.ownerPhoneNumber }}
+            </div>
+            <mx-label type="form">
+                {{'selectPool.home' | i18n | uppercase}}
+            </mx-label>
+        </div>        
+    </div>
+    <!-- SPECIAL VISIT -->
+    <div class="row main" style="margin-top: 20px;" *ngIf="visitType == 'specialVisit' || visitType=='singleVisit'" [class.extendedTitleMode]="args.modalMode=='extendedTitle'">
+
+        <form autocomplete="false" novalidate [formGroup]="specialVisitForm">
+
+            <div class="col-md-40">
+                <div class="row row-margin">
+                    <div class="col-md-30">
+                        <mx-label type="form">
+                            {{'G.type' | i18n}}
+                        </mx-label>
+                    </div>
+                    <div class="col-md-70">
+                        <mx-drop-down
+                            type="form"
+                            [options]="typeOptions"
+                            formControlName="type"
+                            [disable]="disableSpecialVisitType"
+                            [placeholder]="'editVisit.selectTypePlaceholder' | i18n">
+                        </mx-drop-down>
+                        <error-handler
+                            [errors]="specialVisitForm.controls.type.errors"
+                            [data]="specialVisitForm.controls.type">
+                        </error-handler>
+                    </div>
+                </div>
+                <div class="row row-margin">
+                    <div class="col-md-30">
+                        <mx-label type="form">
+                            {{'G.date' | i18n}}
+                        </mx-label>
+                    </div>
+                    <div class="col-md-70">
+                        <mx-datepicker type="form" formControlName="date"></mx-datepicker>
+                    </div>
+                </div>
+                <div class="row row-margin">
+                    <div class="col-md-30">
+                        <mx-label type="form">
+                            {{'G.team' | i18n}}
+                        </mx-label>
+                    </div>
+                    <div class="col-md-70">
+                        <mx-drop-down type="form" [options]="teamOptions" formControlName="team" [placeholder]="'editVisit.selectTeamPlaceholder' | i18n"></mx-drop-down>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-55 col-md-offset-5" style="height: 111px;">
+
+                <mx-textarea 
+                    [placeholder]="'editVisit.technicianNotes' | i18n" 
+                    formControlName="notes"
+                    maxLength="1000">
+                </mx-textarea>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- VISIT SERIES -->
+    <div class="row main" style="margin-top: 20px;" *ngIf="visitType == 'entireSeries' || visitType == 'visitSeries'">
+
+        <form autocomplete="false" novalidate [formGroup]="visitSeriesForm">
+
+            <div class="col-md-40">
+                <div class="row row-margin">
+                    <div class="col-md-30">
+                        <mx-label type="form">
+                            {{'G.repeat' | i18n}}
+                        </mx-label>
+                    </div>
+                    <div class="col-md-70">
+                        <mx-drop-down type="form" [options]="repeatOptions" formControlName="repeat" [disable]="disableSeriesRepeat" [placeholder]="'editVisit.selectRepeatPlaceholder' | i18n">
+                        </mx-drop-down>
+                    </div>
+                </div>
+                <div class="row row-margin">
+                    <div class="col-md-30">
+                        <mx-label type="form">
+                            {{'G.day' | i18n}}
+                        </mx-label>
+                    </div>
+                    <div class="col-md-70">
+                        <mx-drop-down type="form" [options]="dayOptions" formControlName="day" [placeholder]="'editVisit.selectDayPlaceholder' | i18n">
+                        </mx-drop-down>
+                    </div>
+                </div>
+                <div class="row row-margin">
+                    <div class="col-md-30">
+                        <mx-label type="form">
+                            {{'G.start' | i18n}}
+                        </mx-label>
+                    </div>
+                    <div class="col-md-70">
+                        <mx-datepicker type="form" formControlName="startDate"></mx-datepicker>
+                    </div>
+                </div>
+                <div class="row row-margin">
+                    <div class="col-md-100">
+                        <mx-label type="form">
+                            {{'editVisit.seriesEnds' | i18n}}
+                        </mx-label>
+                    </div>
+                </div>
+                <div class="row row-margin">
+                    <div class="col-md-30">
+                        <mx-radio name="seriesEnds" value="specificDate" formControlName="seriesEndsRadio">
+                            <mx-label type="form-normal" class="inline-block">
+                                {{'editVisit.seriesEndsOn' | i18n}}
+                            </mx-label>
+                        </mx-radio>
+                    </div>
+                    <div class="col-md-70">
+                        <mx-datepicker type="form" formControlName="endDate" [disable]="disableEndDate"></mx-datepicker>
+                    </div>
+                </div>
+                <div class="row row-margin">
+                    <div class="col-md-30">
+                        <mx-radio name="seriesEnds" value="numOfVisits" formControlName="seriesEndsRadio">
+                            <mx-label type="form-normal" class="inline-block">
+                                {{'editVisit.seriesEndsAfter' | i18n}}
+                            </mx-label>
+                        </mx-radio>
+                    </div>
+                    <div class="col-md-50">
+                        <mx-input formControlName="numOfVisits" [disable]="disableNumOfVisits"></mx-input>
+                    </div>
+                    <div class="col-md-20 text-right">
+                        <mx-label type="form-normal" class="inline-block">
+                            {{'editVisit.seriesEndsVisits' | i18n}}
+                        </mx-label>
+                    </div>
+                </div>
+                <div class="row row-margin">
+                    <div class="col-md-30">
+                        <mx-label type="form">
+                            {{'G.team' | i18n}}
+                        </mx-label>
+                    </div>
+                    <div class="col-md-70">
+                        <mx-drop-down type="form" [options]="teamOptions" formControlName="team" [placeholder]="'editVisit.selectTeamPlaceholder' | i18n"></mx-drop-down>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-55 col-md-offset-5" style="height: 290px;">
+
+                <mx-textarea 
+                    [placeholder]="'editVisit.technicianNotes' | i18n" 
+                    formControlName="notes"
+                    maxLength="1000">
+                </mx-textarea>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

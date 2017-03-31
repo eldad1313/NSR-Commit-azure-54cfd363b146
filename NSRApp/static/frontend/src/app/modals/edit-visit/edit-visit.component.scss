@@ -1,0 +1,18 @@
+@import '../../scss/all';
+.extendedTitleMode {
+    padding: 0 20px;
+}
+
+.pool-extended-title {
+    background: $color102;
+    padding: 15px;
+}
+
+.value {
+    @include normalStyle(14, $color1);
+    margin-bottom: -5px;
+}
+
+.title-link {
+    @include normalStyle(12, $color5);
+}

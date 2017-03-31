@@ -1,0 +1,26 @@
+/// Replace `$search` with `$replace` in `$string`
+/// @author Hugo Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}
+
+$deskSprite: sprite-map("assets/images/desktop/*.png");
+$deskSpriteUrl: sprite-url($deskSprite);
+$deskBGUrl: str-replace($deskSpriteUrl, "url('/src/assets", "url('/assets");
+
+@mixin bgDesk($icon) {
+	background-image: $deskBGUrl;
+	background-position: round(nth(sprite-position($deskSprite, $icon), 1) ) round(nth(sprite-position($deskSprite, $icon), 2) );
+	height: image-height(sprite-file($deskSprite, $icon));
+	width: image-width(sprite-file($deskSprite, $icon));
+} 

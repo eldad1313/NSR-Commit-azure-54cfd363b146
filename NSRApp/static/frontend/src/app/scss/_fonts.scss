@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@mixin normalStyle($fontSize, $color, $uppercase: false){
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-size: ($fontSize*1) + px;
+	color: $color;
+	@if $uppercase {
+		text-transform: uppercase;
+	}
+}
+
+@mixin boldStyle($fontSize, $color, $uppercase: false){
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: ($fontSize*1) + px;
+	color: $color;
+	@if $uppercase {
+		text-transform: uppercase;
+	}
+}
+
+@mixin italicStyle($fontSize, $color, $uppercase: false){
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: ($fontSize*1) + px;
+	color: $color;
+	@if $uppercase {
+		text-transform: uppercase;
+	}
+}
+
+@mixin boldItalicStyle($fontSize, $color, $uppercase: false){
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: ($fontSize*1) + px;
+	color: $color;
+	@if $uppercase {
+		text-transform: uppercase;
+	}
+}

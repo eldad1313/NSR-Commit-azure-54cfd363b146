@@ -1,0 +1,82 @@
+/* The original settings are in: node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_dropdowns.scss */
+
+@import './colors';
+@import './fonts';
+
+.btn-group.open .dropdown-toggle {
+    box-shadow: none
+}
+
+@mixin basePopoverStyle() {
+    .popover {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        .arrow {
+            border: none;
+            left: 57% !important;
+        }
+        .popover-content {
+            padding: 0 !important;
+        }
+    }    
+}
+
+/*************************************************************
+This is configuration for popovers with the attribute: container="body".
+These popovers will be appended to the body element instead of their
+original DOM container.
+*/
+@include basePopoverStyle();
+.body-injected-calendar-popover {
+    .popover-select {
+        border-bottom: 1px solid #eee;
+        white-space: nowrap;
+        @include normalStyle(16, $color1); 
+        padding: 7px 15px;
+        &.clickable {
+            cursor: pointer;
+            &:hover {
+                background: $color5-20;
+            }
+        }
+    }
+    .popover-add {
+        padding: 6px;
+    }
+}
+/*************************************************************/
+
+.popover-datepicker-wrapper {
+    @include basePopoverStyle();
+    .popover {
+        .popover-content {
+            width: 200px;
+            height: 250px;
+            padding: 10px !important;
+            .popover-select {
+                border-bottom: 1px solid #eee;
+                &.clickable {
+                    cursor: pointer;
+                    &:hover {
+                        background: $color5-20;
+                    }
+                }
+            }
+            .popover-add {
+                padding: 6px;
+            }
+        }
+    }
+    /* use 'left-X' to move the .popover to the right */
+    @for $i from 0 through 60 {
+        .left-#{$i} + .popover {
+            left: 0px + $i !important;
+        }
+    }
+    /* use 'left-minus-X' to move the .popover to the left */
+    @for $i from 0 through 60 {
+        .left-minus-#{$i} + .popover {
+            left: 0px - $i !important;
+        }
+    }
+}

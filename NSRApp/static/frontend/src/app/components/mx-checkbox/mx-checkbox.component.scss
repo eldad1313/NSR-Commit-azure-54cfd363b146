@@ -1,0 +1,20 @@
+@import '../../scss/all';
+
+.mx-checkbox {
+    width: 20px;
+    height: 20px;
+    padding: 4px 2px;
+    background-color: $color7;
+    border: 1px solid $color2-20;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+    
+    input[type="checkbox"] + label {
+        display: block;
+        .icon {
+            cursor:pointer;
+        }
+    }
+}

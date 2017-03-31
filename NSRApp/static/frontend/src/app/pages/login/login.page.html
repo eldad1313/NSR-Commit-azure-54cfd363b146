@@ -1,0 +1,67 @@
+<div class="login-page login-bg max-height">
+    <div class="row top-section"></div>
+    <div class="row logo-wrapper">
+        <div class="col-md-100">
+            <icon type="Logo_login"></icon>
+        </div>
+    </div>
+    <form autocomplete="false" novalidate [formGroup]="loginForm">
+        <div class="row login-panel">
+            <div class="col-md-100">
+                <div class="row logo-row">
+                    <div class="col-md-100 text-center">
+                        LOGO<!--<icon type="logo-positive" hover="true" routerLink="/sys/home"></icon>-->
+                    </div>
+                </div>
+
+                <div class="row username-row">
+                    <div class="col-md-80 col-md-push-10">
+                        <mx-input
+                            class="username"
+                            formControlName="username"
+                            type="form"
+                            [placeholder]="'login.usernamePlaceholder' | i18n">
+                        </mx-input>
+                        <br />
+                        <error-handler
+                            class="error-text"
+                            [errors]="showErrors && loginForm.controls.username.errors"
+                            [data]="loginForm.controls.username"
+                            [patternMsg]="'login.validEmailMsg' | i18n"
+                            [showPristine]="true">
+                        </error-handler>
+                    </div>
+                </div>
+                <div class="row password-row">
+                    <div class="col-md-80 col-md-push-10">
+                        <mx-input
+                            class="password"
+                            formControlName="password"
+                            type="form"
+                            [placeholder]="'login.passwordPlaceholder' | i18n">
+                        </mx-input>
+                        <br />
+                        <error-handler
+                            class="error-text"
+                            [errors]="showErrors && loginForm.controls.password.errors"
+                            [data]="loginForm.controls.password"
+                            [showPristine]="true">
+                        </error-handler>
+                    </div>
+                </div>
+                <div class="row forgot-password-row">
+                    <div class="col-md-80 col-md-push-10 forgot-password-col pointer" routerLink="/sys/forgotPassword">
+                        {{ 'login.forgotPassword' | i18n }}
+                    </div>
+                </div>
+                <div class="row submit-row">
+                    <div class="col-md-100 text-center">
+                        <mx-button type="large-primary" (click)="submitLogin()">
+                            {{ 'login.login' | i18n }}
+                        </mx-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

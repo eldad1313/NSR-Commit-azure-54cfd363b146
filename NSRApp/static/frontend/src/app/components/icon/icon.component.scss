@@ -1,0 +1,17 @@
+.icon {
+	display: inline-block;
+	cursor: auto;
+	
+	&.hover:hover {
+		cursor: pointer;
+	}
+
+	&.pressed:active {
+		cursor: pointer;
+	}
+
+	&.pointer:hover,
+	&.pointer:active {
+		cursor: pointer;
+	}
+}

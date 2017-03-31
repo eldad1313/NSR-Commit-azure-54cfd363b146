@@ -1,0 +1,112 @@
+@import '../../scss/all';
+
+@mixin disableResponsive() {
+    &.disable {
+		.dropdown-header {
+			background: $color102;
+			pointer-events: none;
+		}
+	}
+}
+
+.form {
+    @include disableResponsive();
+    .dropdown-header {
+        height: 27px;
+        padding: 3px 5px;
+        border: 1px solid $color100;
+        @include normalStyle(14, $color2);
+        padding-right: 20px;
+        cursor: pointer;
+        position: relative;
+        &.invalid {
+            border-color: $color8;
+        }
+        .expand-icon {
+            position: absolute;
+            right: 3px;
+            top: 2px
+        }
+        .placeholder {
+            @include italicStyle(14, $color2-50);
+        }
+    }
+    .dropdown-menu {
+        max-height: 305px;
+        overflow-y: auto;
+        padding: 0px;
+        .dropdown-item {
+            @include normalStyle(14, $color2);
+            padding: 3px 5px;
+            cursor: pointer;
+            &:hover {
+                background: $color5-20;
+            }
+            &:active {
+                background: $color5-50;
+            }
+        }
+    }
+}
+
+.filters {
+    @include disableResponsive();
+    .dropdown-header {
+        height: 27px;
+        padding: 3px 5px;
+        border: none;
+        @include normalStyle(16, $color1);
+        margin-right: 8px;
+        padding-right: 20px;
+        cursor: pointer;
+        position: relative;
+        .expand-icon {
+            position: absolute;
+            right: 3px;
+            top: 2px
+        }
+        .placeholder {
+            @include italicStyle(14, $color2-50);
+        }
+    }
+    .dropdown-menu {
+        padding: 0px;
+        .dropdown-item {
+            @include normalStyle(14, $color2);
+            padding: 3px 5px;
+            cursor: pointer;
+            &:hover {
+                background: $color5-20;
+            }
+            &:active {
+                background: $color5-50;
+            }
+        }
+    }
+}
+
+.logout {
+    @include disableResponsive();
+    .dropdown-header {
+        display: inline-block;
+        padding: 0px;
+        cursor: pointer;
+    }
+    .dropdown-menu {
+        left: -21px;
+        padding: 0px;
+        min-width: 125px;
+        .dropdown-item {
+            @include normalStyle(14, $color1);
+            padding: 9px 19px;
+            padding-right: 19px;
+            cursor: pointer;
+            &:hover {
+                background: $color5-20;
+            }
+            &:active {
+                background: $color5-50;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import '../../scss/all';
+
+.main-menu-profile {
+	.login-signup{
+		color: $color7;
+		line-height: 92px;
+		@include boldStyle(14, $color7);
+	}
+	
+	.logout-icon {
+		padding-right: 9px;
+	}
+	.user-details,
+	.date {
+		@include normalStyle(14, $color7);
+		margin-top: 50px;
+		display: inline-block;
+	}
+}

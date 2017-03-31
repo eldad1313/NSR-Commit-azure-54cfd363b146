@@ -1,0 +1,35 @@
+@import '../../scss/colors';
+@import '../../scss/fonts';
+
+.main-menu {
+	text-align: center;
+	.main-menu-content{
+		max-width: 1360px;
+	}
+	width: 100%;
+	height: 92px;
+	background: $color1;
+	.main-menu-logo{
+		float: left;
+		// margin-left: 40px;
+		// margin-top: 33px;
+	}
+	.main-menu-profile{
+		float: right;
+	}
+	.main-menu-btns-wrapper{
+		float: left;
+		.main-menu-btn{
+			line-height: 92px;
+			display: inline-block;
+			padding: 0px 10px;
+			@include normalStyle(16, $color7);	
+			cursor: pointer;		
+		}
+
+		.main-menu-btn-icon{
+			height: 31px;
+		}
+		
+	}
+}

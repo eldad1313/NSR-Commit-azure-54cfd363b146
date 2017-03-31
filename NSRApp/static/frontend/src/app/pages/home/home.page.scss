@@ -1,0 +1,63 @@
+@import '../../scss/all';
+.title {
+    @include normalStyle(48, $color3);
+    line-height: 100px;
+}
+
+.sub-title {
+    @include normalStyle(18, $color4);
+    line-height: 36px;
+    overflow-y: auto;
+    height: 330px;
+}
+
+.start-btn {
+    @include normalStyle(24, $color2);
+    padding: 12px;
+    @include prefix(border-radius, 3px);
+    background: $color5;
+    display: inline-block;
+    margin-top: 13px;
+}
+
+.sub-title-col {
+    padding-right: 30px;
+    height: 400px;
+    position: relative;
+}
+
+.home-footer {
+    background: $color6;
+    margin-top: 40px;
+    .footer-col {
+        padding: 30px;
+        text-align: center;
+        position: relative;
+        .footer-col-title {
+            @include normalStyle(18, $color4);
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .footer-col-body {
+            @include normalStyle(14, $color4);
+        }
+        &:last-child {
+            &:after {
+                content: "";
+                height: 160px;
+                top: 25px;
+                position: absolute;
+                border-right: 1px solid white;
+                right: 0;
+            }
+        }
+        &:before {
+            content: "";
+            height: 160px;
+            top: 25px;
+            position: absolute;
+            border-right: 1px solid white;
+            left: 0;
+        }
+    }
+}

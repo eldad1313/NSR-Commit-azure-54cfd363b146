@@ -1,0 +1,30 @@
+.form-container {
+    .row {
+        &.row-margin {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.ng-invalid.ng-dirty>.dropdown {
+    .dropdown-header {
+        border: 1px solid $color8 !important;
+    }
+}
+
+.ng-invalid.ng-dirty>.mx-datepicker {
+    .datepicker-header {
+        border: 1px solid $color8 !important;
+    }
+}
+
+.ng-invalid.ng-dirty>.mx-input {
+    border: 1px solid $color8 !important;
+}
+
+.ng-invalid > .mx-input.login {
+    border: 1px solid $color8 !important;
+    &.hide-errors {
+        border: none !important;
+    }
+}

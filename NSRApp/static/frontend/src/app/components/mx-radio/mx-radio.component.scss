@@ -1,0 +1,32 @@
+@import '../../scss/all';
+
+.mx-radio{
+	line-height: 27px;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label > .icon {
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+}
+
+input[type="radio"] + label > .icon {
+     border: 1px solid $color101;
+}
+
+input[type="radio"]:checked + label > .icon .inner-icon{
+     width: 10px;
+	 height: 10px;
+	 background-color:$color101;
+	 @include prefix(border-radius, 6px);
+	 margin: 4px;	 
+}

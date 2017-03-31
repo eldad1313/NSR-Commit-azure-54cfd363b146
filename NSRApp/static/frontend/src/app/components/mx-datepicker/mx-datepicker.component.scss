@@ -1,0 +1,36 @@
+@import '../../scss/all';
+
+.mx-datepicker{
+	&.form {
+		.datepicker-header {
+			height: 27px;
+			padding: 3px 5px;
+			border: 1px solid $color100;
+			@include normalStyle(14, $color2);
+			padding-right: 20px;
+			position: relative;
+			.expand-icon {
+				position: absolute;
+				right: 3px;
+				top: 2px
+			}
+			.placeholder {
+				@include italicStyle(14, $color2-50);
+			}
+		}		
+	}
+	&.disable {
+		.datepicker-header {
+			background: $color102;
+			pointer-events: none;
+		}
+	}
+	.arrow-left{
+		position: relative;
+		top: -3px;
+	}
+	.arrow-right{
+		position: relative;
+		top: -3px;
+	}
+}

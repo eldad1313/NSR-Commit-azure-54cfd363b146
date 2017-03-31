@@ -1,0 +1,40 @@
+// modals
+.modal-default-theme {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    .modal-btn{
+        display: inline-block;
+        cursor: pointer;
+        margin-bottom: 12px;
+        @include prefix(border-radius, 15px);
+        padding: 5px 20px;
+        &.negative {
+            background: $color2;
+            @include normalStyle(16, $color7);
+        }
+        &.positive {
+            @include normalStyle(16, $color2);
+        }
+    }
+
+    .notification {
+        text-align: center;
+        box-shadow: none;
+        border: 2px solid $color9;
+        @include prefix(border-radius, 25px);
+        .modal-footer{
+            border: none;
+            text-align: center;            
+        }
+        .notification-icon{
+            margin-top: 20px;
+        }
+        .nofitication-body{
+            margin-top: 20px;
+            margin-bottom: 5px;
+            @include normalStyle(16, $color2);
+        }
+    }
+}

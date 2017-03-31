@@ -1,0 +1,7 @@
+<div class="notification-icon" *ngIf="args.iconType">    
+    <icon type="{{args.iconType}}"></icon>
+</div>
+<div class="nofitication-body" [innerHtml]="args.html" *ngIf="args.html"></div>
+<div class="nofitication-body" *ngIf="args.body">
+    {{ args.body }}
+</div>

@@ -1,0 +1,32 @@
+<div class="mx-datepicker {{type}} no-select" [class.disable]="disable" [class.pointer]="!enableArrows" [id]="instanceId">
+    <div class="datepicker-header" (click)="!enableArrows && togglePopup()">
+        <icon type="OpenLeft" class="arrow-left" *ngIf="enableArrows" hover="true" pressed="true" (click)="changeDay(-1)"></icon>
+        <div *ngIf="!selected" class="placeholder inline-block" ellipsisOverflow>
+            {{ placeholder || ('G.datepickerPlaceholder' | i18n) }}
+        </div>
+        <div *ngIf="selected" class="selected inline-block" ellipsisOverflow>
+            {{ selected | amDateFormat: format || 'MMM DD, YYYY'}}
+        </div>
+        <icon type="Close_Right" class="arrow-right" *ngIf="enableArrows" hover="true" pressed="true" (click)="changeDay(1)"></icon>
+        <icon type="Cal" hover="true" pressed="true" class="expand-icon" (click)="enableArrows && togglePopup()"></icon>
+    </div>
+    <div class="popover-datepicker-wrapper">
+        <template #popTemplate>
+            <mx-calendar
+                type="docker"
+                [enablePastSelection]="enablePastSelection"
+                [disableFutureSelection]="disableFutureSelection"
+                [enableSelect]="true"
+                [(selected)]="selected"
+                (selectedChange)="pop.hide(); onSelectedChanged()">
+            </mx-calendar>
+        </template>
+        <div
+            class=""
+            [popover]="popTemplate"
+            #pop="bs-popover"
+            placement="bottom"
+            [ngClass]="layout">
+        </div>
+    </div>
+</div>

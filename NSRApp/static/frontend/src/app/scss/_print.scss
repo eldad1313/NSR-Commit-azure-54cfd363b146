@@ -1,0 +1,51 @@
+@mixin widthHeightAuto() {
+    height: auto !important;
+    width: auto !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    float: none !important;
+    position: relative !important;
+    min-width: initial !important;
+}
+
+.print-visit-report {
+    @media only print {
+        @include widthHeightAuto();
+        .main-menu, .main-stage {
+            display: none;
+            @include widthHeightAuto();
+        }
+        .modal {
+            @include widthHeightAuto();
+            .modal-dialog {
+                @include widthHeightAuto();
+                .modal-content {
+                    @include widthHeightAuto();
+                    border: none;
+                    max-height: none;
+                    .modal-body {
+                        @include widthHeightAuto();
+                        .visit-report-contents {
+                            @include widthHeightAuto();
+                            .body-section {
+                                @include widthHeightAuto();
+                                .snapshots-section {
+                                    max-height: none !important;
+                                }
+                                .comments-section {
+                                    position: fixed !important;
+                                    right: 0px !important;
+                                    width: calc(100vw - 567px) !important;
+                                    font-size: 14px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                .modal-footer {
+                    display: none;
+                }
+            }
+        }
+    }
+}

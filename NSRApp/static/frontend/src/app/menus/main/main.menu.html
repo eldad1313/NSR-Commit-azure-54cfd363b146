@@ -1,0 +1,19 @@
+<div class="main-menu text-center container-fluid">
+    <div class="row">
+        <div class="col-lg-80 col-lg-push-10 col-sm-96 col-sm-push-2">
+            <div class="main-menu-logo pointer" routerLink="/sys/home" style="padding-top: 12px;">
+                LOGO<!--<icon type="logo" hover="true"></icon>-->
+            </div>
+            <div class="main-menu-btns-wrapper">
+                <div class="main-menu-btn text-center" *ngFor="let btn of mainMenuBtns" [class.active]="btn.active" (click)="route(btn)">
+                    <div class="main-menu-btn-label">
+                        {{btn.label | i18n | uppercase}}
+                    </div>
+                </div>
+            </div>
+            <div class="main-menu-profile">
+                <main-menu-profile></main-menu-profile>
+            </div>
+        </div>
+    </div>
+</div>

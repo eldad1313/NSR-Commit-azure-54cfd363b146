@@ -1,0 +1,5 @@
+@import '../../scss/all';
+
+.error-handler {
+	@include normalStyle(12, $color8);
+}

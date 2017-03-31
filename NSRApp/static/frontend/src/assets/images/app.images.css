@@ -1,0 +1,327 @@
+/* line 1, _app.bg.scss */
+.main-menu-bg {
+  background: url(/assets/images/bg/Nav_bckrnd.png);
+}
+
+/* line 5, _app.bg.scss */
+.login-bg {
+  background: url(/assets/images/bg/Login_bckrnd.png);
+}
+
+/* line 39, app.images.scss */
+.icon.Alert {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 0;
+  height: 31px;
+  width: 33px;
+}
+
+/* line 39, app.images.scss */
+.icon.Cal {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -31px;
+  height: 19px;
+  width: 18px;
+}
+
+/* line 39, app.images.scss */
+.icon.Check {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -50px;
+  height: 11px;
+  width: 14px;
+}
+
+/* line 39, app.images.scss */
+.icon.Close {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -61px;
+  height: 12px;
+  width: 12px;
+}
+/* line 42, app.images.scss */
+.icon.Close.hover:hover {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -112px;
+  height: 12px;
+  width: 12px;
+}
+
+/* line 39, app.images.scss */
+.icon.Close_hovr {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -112px;
+  height: 12px;
+  width: 12px;
+}
+
+/* line 39, app.images.scss */
+.icon.Close_Right {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -99px;
+  height: 13px;
+  width: 8px;
+}
+
+/* line 39, app.images.scss */
+.icon.CloseRight {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -73px;
+  height: 13px;
+  width: 8px;
+}
+/* line 42, app.images.scss */
+.icon.CloseRight.hover:hover {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -86px;
+  height: 13px;
+  width: 8px;
+}
+
+/* line 39, app.images.scss */
+.icon.CloseRight_hovr {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -86px;
+  height: 13px;
+  width: 8px;
+}
+
+/* line 39, app.images.scss */
+.icon.Drpdwn {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -124px;
+  height: 8px;
+  width: 12px;
+}
+/* line 42, app.images.scss */
+.icon.Drpdwn.hover:hover {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -132px;
+  height: 8px;
+  width: 12px;
+}
+
+/* line 39, app.images.scss */
+.icon.Drpdwn_hovr {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -132px;
+  height: 8px;
+  width: 12px;
+}
+
+/* line 39, app.images.scss */
+.icon.logo {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -675px;
+  height: 54px;
+  width: 167px;
+}
+
+/* line 39, app.images.scss */
+.icon.logo-positive {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -619px;
+  height: 56px;
+  width: 209px;
+}
+
+/* line 39, app.images.scss */
+.icon.OpenLeft {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -140px;
+  height: 13px;
+  width: 8px;
+}
+/* line 42, app.images.scss */
+.icon.OpenLeft.hover:hover {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -153px;
+  height: 13px;
+  width: 8px;
+}
+
+/* line 39, app.images.scss */
+.icon.OpenLeft_hovr {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -153px;
+  height: 13px;
+  width: 8px;
+}
+
+/* line 39, app.images.scss */
+.icon.OrangeZone {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -166px;
+  height: 22px;
+  width: 22px;
+}
+
+/* line 39, app.images.scss */
+.icon.RedSmallClose {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -188px;
+  height: 12px;
+  width: 12px;
+}
+/* line 42, app.images.scss */
+.icon.RedSmallClose.hover:hover {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -200px;
+  height: 12px;
+  width: 12px;
+}
+/* line 47, app.images.scss */
+.icon.RedSmallClose.pressed:active {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -212px;
+  height: 12px;
+  width: 12px;
+}
+
+/* line 39, app.images.scss */
+.icon.RedSmallClose_hovr {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -200px;
+  height: 12px;
+  width: 12px;
+}
+
+/* line 39, app.images.scss */
+.icon.RedSmallClose_prssd {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -212px;
+  height: 12px;
+  width: 12px;
+}
+
+/* line 39, app.images.scss */
+.icon.Remove {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -224px;
+  height: 12px;
+  width: 12px;
+}
+
+/* line 39, app.images.scss */
+.icon.SpecialVisit {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -236px;
+  height: 32px;
+  width: 32px;
+}
+
+/* line 39, app.images.scss */
+.icon.signup {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -729px;
+  height: 171px;
+  width: 229px;
+}
+
+/* line 39, app.images.scss */
+.icon.User {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -268px;
+  height: 23px;
+  width: 23px;
+}
+/* line 42, app.images.scss */
+.icon.User.hover:hover {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -291px;
+  height: 23px;
+  width: 23px;
+}
+/* line 47, app.images.scss */
+.icon.User.pressed:active {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -314px;
+  height: 23px;
+  width: 23px;
+}
+
+/* line 39, app.images.scss */
+.icon.User_hovr {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -291px;
+  height: 23px;
+  width: 23px;
+}
+
+/* line 39, app.images.scss */
+.icon.User_prssd {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -314px;
+  height: 23px;
+  width: 23px;
+}
+
+/* line 39, app.images.scss */
+.icon.ZoomIn {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -337px;
+  height: 14px;
+  width: 14px;
+}
+/* line 42, app.images.scss */
+.icon.ZoomIn.hover:hover {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -351px;
+  height: 14px;
+  width: 14px;
+}
+/* line 47, app.images.scss */
+.icon.ZoomIn.pressed:active {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -365px;
+  height: 14px;
+  width: 14px;
+}
+
+/* line 39, app.images.scss */
+.icon.ZoomIn_hovr {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -351px;
+  height: 14px;
+  width: 14px;
+}
+
+/* line 39, app.images.scss */
+.icon.ZoomIn_prssd {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -365px;
+  height: 14px;
+  width: 14px;
+}
+
+/* line 39, app.images.scss */
+.icon.home-icon-1 {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -379px;
+  height: 60px;
+  width: 60px;
+}
+
+/* line 39, app.images.scss */
+.icon.home-icon-2 {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -439px;
+  height: 60px;
+  width: 60px;
+}
+
+/* line 39, app.images.scss */
+.icon.home-icon-3 {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -499px;
+  height: 60px;
+  width: 60px;
+}
+
+/* line 39, app.images.scss */
+.icon.home-icon-4 {
+  background-image: url('/assets/images/desktop-s6e7de55a61.png');
+  background-position: 0 -559px;
+  height: 60px;
+  width: 61px;
+}

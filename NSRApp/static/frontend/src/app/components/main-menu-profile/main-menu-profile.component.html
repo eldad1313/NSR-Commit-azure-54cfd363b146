@@ -1,0 +1,22 @@
+<div class="main-menu-profile">
+    <div class="user-details" *ngIf="loggedIn">
+        <mx-drop-down
+            style="display: inline-block;"
+            type="logout"
+            [options]="DROP_DOWN_OPTIONS"
+            [(ngModel)]="dropDownModel"
+            [transcludeHeader]="true"
+            (ngModelChange)="openLogoutPopup()">
+            <icon
+                class="logout-icon"
+                type="User"
+                [hover]="true"
+                [pressed]="true">
+            </icon>
+        </mx-drop-down>
+        {{ userDetails.last_name }} {{ userDetails.first_name | slice:0:1 | uppercase }}.,
+    </div>
+    <div class="login-signup" *ngIf="!loggedIn">
+        <span class="pointer" routerLink="/login">{{ 'G.login' | i18n }}</span>
+    </div>
+</div>

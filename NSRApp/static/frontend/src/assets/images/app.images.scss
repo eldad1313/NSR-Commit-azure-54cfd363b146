@@ -1,0 +1,52 @@
+@import 'sprite';
+@import 'app.bg';
+
+$iconList: 
+    "Alert",
+    "Cal",
+    "Check",
+    "Close",
+    "Close_hovr",
+    "Close_Right",
+    "CloseRight",
+    "CloseRight_hovr",
+    "Drpdwn",
+    "Drpdwn_hovr",
+    "logo",
+    "logo-positive",
+    "OpenLeft",
+    "OpenLeft_hovr",
+    "OrangeZone",
+    "RedSmallClose",
+    "RedSmallClose_hovr",
+    "RedSmallClose_prssd",
+    "Remove",
+    "SpecialVisit",
+    "signup",
+    "User",
+    "User_hovr",
+    "User_prssd",
+    "ZoomIn",
+    "ZoomIn_hovr",
+    "ZoomIn_prssd",
+    "home-icon-1",
+    "home-icon-2",
+    "home-icon-3",
+    "home-icon-4"
+;
+
+@each $icon in $iconList {
+    .icon.#{$icon} {
+        @include bgDesk($icon);
+        @if index($iconList, $icon + '_hovr'){
+            &.hover:hover {
+                @include bgDesk($icon + '_hovr');                
+            }
+        }
+        @if index($iconList, $icon + '_prssd'){
+            &.pressed:active {
+                @include bgDesk($icon + '_prssd');
+            }
+        }
+    }
+}
